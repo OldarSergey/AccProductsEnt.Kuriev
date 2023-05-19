@@ -17,6 +17,6 @@
         public int Remainder { get; set; }
 
 
-        public Storage Storages { get; set; }
+        public Storage Storage { get; set; }
     }
 }

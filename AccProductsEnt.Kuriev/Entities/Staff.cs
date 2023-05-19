@@ -18,13 +18,13 @@
 
         public int WorkshopId { get; set; }
         public int StorageId { get; set; }
-        public int AccoutingId { get; set; }
+        public int AccountingId { get; set; }
         public int ImplementationId { get; set; }
 
         public Workshop Workshop { get; set; }
         public Storage Storage { get; set; }
         public Accounting Accounting { get; set; }
         public Implementation Implementation { get; set; }
-        public Post Posts { get; set; }
+        public Post Post { get; set; }
     }
 }

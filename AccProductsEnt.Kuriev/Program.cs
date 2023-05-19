@@ -1,7 +1,15 @@
+using AccProductsEnt.Kuriev.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+var configuration = builder.Configuration;
+
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+options.UseSqlServer(configuration.GetConnectionString("BloggingDatabase")));
 
 var app = builder.Build();
 

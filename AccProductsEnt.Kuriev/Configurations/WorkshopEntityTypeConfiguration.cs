@@ -16,7 +16,19 @@ namespace AccProductsEnt.Kuriev.Configurations
                 .HasMaxLength(50)
                 .HasColumnType("nvarchar");
 
-           /////
+            builder.Property(ws => ws.ProccesName)
+                 .IsRequired()
+                 .HasMaxLength(100)
+                 .HasColumnType("nvarchar");
+
+            builder.HasOne(ws => ws.Raw)
+                .WithMany(ws => ws.Workshops)
+                .HasForeignKey(ws => ws.RawId)
+                .HasConstraintName("FK_Workshops_RawId_Raws_Id")
+                .OnDelete(DeleteBehavior.NoAction);
+
+
+           
         }
     }
 }

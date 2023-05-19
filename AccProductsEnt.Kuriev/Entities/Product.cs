@@ -17,8 +17,8 @@
 
 
         public int WorkshopId { get; set; }
-        public int storageId { get; set; }
-        public int AccoutingId { get; set; }
+        public int StorageId { get; set; }
+        public int AccountingId { get; set; }
         public int ImplementationId { get; set; }
 
         public Workshop Workshop { get; set;}
