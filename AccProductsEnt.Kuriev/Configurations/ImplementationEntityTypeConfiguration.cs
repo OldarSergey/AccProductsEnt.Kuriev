@@ -9,7 +9,7 @@ namespace AccProductsEnt.Kuriev.Configurations
         public void Configure(EntityTypeBuilder<Implementation> builder)
         {
             builder.HasKey(imp =>imp.Id)
-                .HasName("PK_Imlementation_Id");
+                .HasName("PK_Implementation_Id");
 
             builder.Property(imp => imp.ImplementationDate)
                 .IsRequired()

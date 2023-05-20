@@ -2,7 +2,7 @@
 {
     public class Implementation
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
         public bool IsDeleted { get; set; }
 
 
