@@ -3,29 +3,37 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - AccProductsEnt.Kuriev</title>
+    <title>@ViewData["Title"] - Топаз-Сервис</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/AccProductsEnt.Kuriev.styles.css" asp-append-version="true" />
 </head>
-<body>
+<body style="margin:0%">
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">AccProductsEnt.Kuriev</a>
+            <div class="container-fluid">
+                <img src="/images/Topaz2.png" class="img-fluid " alt="Topaz" style="">
+                @*<a class="navbar-brand" asp-area="" asp-page="/Index">Топаз-Сервис</a>*@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between p-5 text-center" style="margin-left:370px">
+                    <ul class="navbar-nav flex-grow-1" >
+                        <li class="nav-item" >
+                            <a class="nav-link text-dark text-decoration-underline fw-bolder fs-4" style="margin-left:60px" asp-area="" asp-page="/Company">О нас</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                            <a class="nav-link text-dark text-decoration-underline fw-bolder fs-4" style="margin-left:60px" asp-area="" asp-page="/Product">Изделия</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark text-decoration-underline fw-bolder fs-4" style="margin-left:60px" asp-area="" asp-page="/Raw">Сырье</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link text-dark text-decoration-underline fw-bolder fs-4" style="margin-left:60px" asp-area="" asp-page="/Staff">Сотрудники</a>
                         </li>
                     </ul>
+                    
                 </div>
             </div>
         </nav>
