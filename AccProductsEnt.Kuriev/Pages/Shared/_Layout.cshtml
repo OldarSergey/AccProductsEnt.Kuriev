@@ -9,10 +9,10 @@
     <link rel="stylesheet" href="~/AccProductsEnt.Kuriev.styles.css" asp-append-version="true" />
 </head>
 <body style="margin:0%">
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <img src="/images/Topaz2.png" class="img-fluid " alt="Topaz" style="">
+    <header >
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3" >
+            <div class="container-fluid" style="background-color:#B0C4DE; margin-top:-7px">
+                <img src="/images/TOPAZ3.png" class="img-fluid " alt="Topaz" style="">
                 @*<a class="navbar-brand" asp-area="" asp-page="/Index">Топаз-Сервис</a>*@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -38,15 +38,15 @@
             </div>
         </nav>
     </header>
-    <div class="container">
+    <div class="container-fluid">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2023 - AccProductsEnt.Kuriev - <a asp-area="" asp-page="/Privacy">Privacy</a>
+    <footer class="border-top footer text-muted container-fluid position-absolute end-10 top-95 fixed-bottom ">
+        <div class="container-fluid" style="top:-150px">
+            &copy; 2023 - AccProductsEnt.Kuriev - <a asp-area="" asp-page="/Privacy">Топаз-Сервис</a>
         </div>
     </footer>
 
