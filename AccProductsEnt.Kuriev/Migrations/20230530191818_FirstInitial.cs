@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace AccProductsEnt.Kuriev.Migrations
 {
-    public partial class Initial : Migration
+    public partial class FirstInitial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -152,7 +152,7 @@ namespace AccProductsEnt.Kuriev.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Imlementation_Id", x => x.Id);
+                    table.PrimaryKey("PK_Implementation_Id", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Implementations_StorageId_Storages_Id",
                         column: x => x.StorageId,
@@ -221,6 +221,7 @@ namespace AccProductsEnt.Kuriev.Migrations
                     Quantity = table.Column<int>(type: "integer", nullable: false),
                     DateOfManufacture = table.Column<DateTime>(type: "date", nullable: false),
                     PricePerPiece = table.Column<decimal>(type: "money", nullable: false),
+                    ImgPath = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
                     WorkshopId = table.Column<int>(type: "int", nullable: false),
                     StorageId = table.Column<int>(type: "int", nullable: false),
                     AccountingId = table.Column<int>(type: "int", nullable: false),
@@ -277,7 +278,7 @@ namespace AccProductsEnt.Kuriev.Migrations
                         principalTable: "Accountings",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_Staffs_ImplementationId_Storages_Id",
+                        name: "FK_Staffs_ImplementationId_Implementations_Id",
                         column: x => x.ImplementationId,
                         principalTable: "Implementations",
                         principalColumn: "Id");

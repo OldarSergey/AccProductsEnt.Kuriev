@@ -15,6 +15,8 @@
 
         public decimal PricePerPiece { get; set; }
 
+        public string ImgPath { get; set; }
+
 
         public int WorkshopId { get; set; }
         public int StorageId { get; set; }

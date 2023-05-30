@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AccProductsEnt.Kuriev.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230520080114_Initial")]
-    partial class Initial
+    [Migration("20230530191818_FirstInitial")]
+    partial class FirstInitial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -129,7 +129,7 @@ namespace AccProductsEnt.Kuriev.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id")
-                        .HasName("PK_Imlementation_Id");
+                        .HasName("PK_Implementation_Id");
 
                     b.HasIndex("StorageId");
 
@@ -256,6 +256,11 @@ namespace AccProductsEnt.Kuriev.Migrations
 
                     b.Property<DateTime>("DateOfManufacture")
                         .HasColumnType("date");
+
+                    b.Property<string>("ImgPath")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<int>("ImplementationId")
                         .HasColumnType("int");
@@ -677,7 +682,7 @@ namespace AccProductsEnt.Kuriev.Migrations
                         .HasForeignKey("ImplementationId")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired()
-                        .HasConstraintName("FK_Staffs_ImplementationId_Storages_Id");
+                        .HasConstraintName("FK_Staffs_ImplementationId_Implementations_Id");
 
                     b.HasOne("AccProductsEnt.Kuriev.Entities.Storage", "Storage")
                         .WithMany("Staffs")

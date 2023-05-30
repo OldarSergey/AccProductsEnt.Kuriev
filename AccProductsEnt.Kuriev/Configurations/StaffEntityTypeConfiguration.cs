@@ -56,7 +56,7 @@ namespace AccProductsEnt.Kuriev.Configurations
             builder.HasOne(staff => staff.Implementation)
                 .WithMany(implementation => implementation.Staffs)
                 .HasForeignKey(staff => staff.ImplementationId)
-                .HasConstraintName("FK_Staffs_ImplementationId_Storages_Id")
+                .HasConstraintName("FK_Staffs_ImplementationId_Implementations_Id")
                 .OnDelete(DeleteBehavior.NoAction);
 
             builder.HasOne(staff => staff.Post)

@@ -1,4 +1,5 @@
 using AccProductsEnt.Kuriev.Data;
+using AccProductsEnt.Kuriev.Service;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,6 +7,12 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages()
     .AddRazorRuntimeCompilation();
+
+builder.Services.AddSingleton<IProductService, ProductService>();
+
+builder.Services.AddSingleton<IRawService, RawService>();
+
+builder.Services.AddSingleton<IStaffService, StaffService>();
 
 var configuration = builder.Configuration;
 

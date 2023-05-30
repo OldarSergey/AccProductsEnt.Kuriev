@@ -20,6 +20,8 @@ namespace AccProductsEnt.Kuriev.Configurations
                 .IsRequired()
                 .HasColumnType("INTEGER");
 
+           
+
             builder.Property(raw => raw.PriceRaw)
                 .IsRequired()
                 .HasColumnType("money");

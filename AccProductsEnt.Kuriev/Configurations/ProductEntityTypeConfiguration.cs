@@ -24,6 +24,10 @@ namespace AccProductsEnt.Kuriev.Configurations
                 .IsRequired()
                 .HasColumnType("date");
 
+            builder.Property(product => product.ImgPath)
+                .HasMaxLength(500)
+                .HasColumnType("nvarchar");
+
             builder.Property(p => p.PricePerPiece)
                 .IsRequired()
                 .HasColumnType("money");
