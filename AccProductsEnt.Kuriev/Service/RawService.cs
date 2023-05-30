@@ -36,7 +36,7 @@ namespace AccProductsEnt.Kuriev.Service
         public void UpdateRaw(string rawName,Raw newRaw )
         {
             var raw = _context.Raws
-                .Where(product => product.RawName == rawName)
+                .Where(raw => raw.RawName == rawName)
                 .FirstOrDefault();
             raw = newRaw;
             _context.SaveChanges();
