@@ -255,6 +255,11 @@ namespace AccProductsEnt.Kuriev.Migrations
                     b.Property<DateTime>("DateOfManufacture")
                         .HasColumnType("date");
 
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
                     b.Property<string>("ImgPath")
                         .IsRequired()
                         .HasMaxLength(500)
@@ -272,7 +277,7 @@ namespace AccProductsEnt.Kuriev.Migrations
                     b.Property<string>("ProductName")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("integer");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("integer");

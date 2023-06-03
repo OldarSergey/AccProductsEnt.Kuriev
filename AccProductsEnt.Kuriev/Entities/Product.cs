@@ -6,7 +6,7 @@
 
         public bool IsDeleted { get; set; }
 
-
+        public string Description { get; set; }
         public string ProductName { get; set; }
 
         public int Quantity { get; set; }

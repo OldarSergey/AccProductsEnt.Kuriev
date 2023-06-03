@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace AccProductsEnt.Kuriev.Migrations
 {
-    public partial class FirstInitial : Migration
+    public partial class Initial228 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -217,7 +217,8 @@ namespace AccProductsEnt.Kuriev.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    ProductName = table.Column<string>(type: "integer", maxLength: 50, nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    ProductName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Quantity = table.Column<int>(type: "integer", nullable: false),
                     DateOfManufacture = table.Column<DateTime>(type: "date", nullable: false),
                     PricePerPiece = table.Column<decimal>(type: "money", nullable: false),

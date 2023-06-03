@@ -11,5 +11,7 @@ namespace AccProductsEnt.Kuriev.Service
         public void UpdateProduct (string productName,Product newProduct);
 
         public Product GetProduct (string productName);
+
+        public List<Product> GetAllProducts ();
     }
 }

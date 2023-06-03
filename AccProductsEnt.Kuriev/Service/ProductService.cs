@@ -17,6 +17,13 @@ namespace AccProductsEnt.Kuriev.Service
             _context.SaveChanges();
         }
 
+        public List<Product> GetAllProducts()
+        {
+            return _context.Products
+                .Where(p => p.IsDeleted == false)
+                .ToList();
+        }
+
         public Product GetProduct(string productName)
         {
             return _context.Products

@@ -8,11 +8,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages()
     .AddRazorRuntimeCompilation();
 
-builder.Services.AddSingleton<IProductService, ProductService>();
+builder.Services.AddScoped<IProductService, ProductService>();
 
-builder.Services.AddSingleton<IRawService, RawService>();
+builder.Services.AddScoped <IRawService, RawService>();
 
-builder.Services.AddSingleton<IStaffService, StaffService>();
+builder.Services.AddScoped<IStaffService, StaffService>();
 
 var configuration = builder.Configuration;
 

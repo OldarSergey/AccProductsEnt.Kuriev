@@ -2,3 +2,74 @@
 @model AccProductsEnt.Kuriev.Pages.ProductModel
 @{
 }
+<a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-success btn-sm ms-3">Добавить изделие</a>
+<div class="row mx-5  justify-content-center ">
+    @foreach (var item in Model.Products)
+    {
+        <div class="col-3 ms-5  card shadow  mb-5" @*style="width: 36rem;"*@>
+            <div class="col border-secondary" style="display:flex;">
+                img
+            </div>
+            <div class="col ">
+                <h1>@item.ProductName</h1>
+                <span>@item.Description</span>
+                <span>@item.Quantity</span>
+                <span>@item.PricePerPiece</span>
+                <span>@item.DateOfManufacture</span>
+            </div>
+        </div>
+    }
+    
+
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabes" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Добавить проект</h5>
+                <button class="btn-close" data-dismiss="modal" aria-label="close"></button>
+            </div>
+            <div class="modal-body">
+                <form method="post">
+                    <div class="form-group mb-3">
+                        <label asp-for="Input.ProductName" class="col-sm-2 col-form-label"></label>
+                        <input asp-for="Input.ProductName" class="form-control" id="inputTitle" />
+                        <span asp-validation-for="Input.ProductName" style="color:darkred"></span>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="Input.Description" class="col-sm-2 col-form-label"></label>
+                        <input asp-for="Input.Description" class="form-control" id="inputTitle" />
+                        <span asp-validation-for="Input.Description" style="color:darkred"></span>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="Input.DateOfManufacture" class="col-sm-2 col-form-label"></label>
+                        <input asp-for="Input.DateOfManufacture" class="form-control" id="inputTitle" />
+                        <span asp-validation-for="Input.DateOfManufacture" style="color:darkred"></span>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="Input.Quantity" class="col-sm-2 col-form-label"></label>
+                        <input asp-for="Input.Quantity" class="form-control" id="inputTitle" />
+                        <span asp-validation-for="Input.Quantity" style="color:darkred"></span>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="Input.PricePerPiece" class="col-sm-2 col-form-label"></label>
+                        <input asp-for="Input.PricePerPiece" class="form-control" id="inputTitle" />
+                        <span asp-validation-for="Input.PricePerPiece" style="color:darkred"></span>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="Input.ImgPath" class="col-sm-2 col-form-label"></label>
+                        <input asp-for="Input.ImgPath" class="form-control" id="inputTitle" />
+                        <span asp-validation-for="Input.ImgPath" style="color:darkred"></span>
+                    </div>
+                    <button type="submit" class="btn-secondary">Сохранить</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" data-dismiss="modal">Закрыть</button>
+                <button class="btn-secondary">Сохранить</button>
+            </div>
+        </div>
+    </div>
+</div>
+

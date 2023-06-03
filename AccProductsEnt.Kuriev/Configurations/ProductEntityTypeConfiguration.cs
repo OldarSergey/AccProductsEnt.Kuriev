@@ -14,7 +14,12 @@ namespace AccProductsEnt.Kuriev.Configurations
             builder.Property(p => p.ProductName)
                 .IsRequired()
                 .HasMaxLength(50)
-                .HasColumnType("integer");
+                .HasColumnType("nvarchar");
+
+            builder.Property(p => p.Description)
+                .IsRequired()
+                .HasMaxLength(500)
+                .HasColumnType("nvarchar");
 
             builder.Property(p => p.Quantity)
                 .IsRequired()
