@@ -34,7 +34,7 @@ namespace AccProductsEnt.Kuriev.Pages
                 DateOfManufacture = Input.DateOfManufacture,
                 PricePerPiece = Input.PricePerPiece,
                 ImgPath = Input.ImgPath,
-                WorkshopId = -1// Недопустимое значение
+                WorkshopId = -1,// Недопустимое значение
                 StorageId = -1, // Недопустимое значение
                 AccountingId = -1, // Недопустимое значение
                 ImplementationId = -1 // Недопустимое значение

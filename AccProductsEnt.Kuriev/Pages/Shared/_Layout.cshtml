@@ -32,8 +32,31 @@
                          <li class="nav-item">
                             <a class="nav-link text-dark text-decoration-underline fw-bolder fs-4" style="margin-left:60px" asp-area="" asp-page="/Staff">Сотрудники</a>
                         </li>
+                        @if (User.IsInRole("Администратор"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark text-decoration-underline fw-bolder fs-4" style="margin-left:60px" asp-area="" asp-page="/Storage">Добавить сторожа</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-dark text-decoration-underline fw-bolder fs-4" style="margin-left:60px" asp-area="" asp-page="/Staff">Сотрудники</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-dark text-decoration-underline fw-bolder fs-4" style="margin-left:60px" asp-area="" asp-page="/Staff">Сотрудники</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-dark text-decoration-underline fw-bolder fs-4" style="margin-left:60px" asp-area="" asp-page="/Staff">Сотрудники</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-dark text-decoration-underline fw-bolder fs-4" style="margin-left:60px" asp-area="" asp-page="/Staff">Сотрудники</a>
+                            </li>
+                        }
+                        
                     </ul>
-                    
+                    <partial name="_LoginPartial"/>
                 </div>
             </div>
         </nav>
