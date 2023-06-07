@@ -18,7 +18,7 @@ namespace AccProductsEnt.Kuriev.Entities.DTO
         [Required]
         [Display(Name = "Дата реализации")]
         [DataType(DataType.Date)]
-        public DateTime ImplrmentationDate { get; set; }
+        public DateTime ImplementationDate { get; set; }
 
 
         [Required]

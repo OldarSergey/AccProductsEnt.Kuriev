@@ -17,6 +17,16 @@ builder.Services.AddScoped <IRawService, RawService>();
 
 builder.Services.AddScoped<IStaffService, StaffService>();
 
+builder.Services.AddScoped<IAccountCardService, AccountCardService>();
+
+builder.Services.AddScoped<IAccountingService, AccountingService>();
+builder.Services.AddScoped<IStorageService, StorageService>();
+builder.Services.AddScoped<IProviderService, ProviderService>();
+
+builder.Services.AddScoped<ITechnicalProcessesService, TechnicalProcessesService>();
+
+builder.Services.AddScoped<IWorkshopService, WorkshopService>();
+
 var configuration = builder.Configuration;
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>

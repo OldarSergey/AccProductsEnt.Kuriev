@@ -17,6 +17,13 @@ namespace AccProductsEnt.Kuriev.Service
             _context.SaveChanges();
         }
 
+        public List<Raw> GetAllRaws()
+        {
+            return _context.Raws
+                .Where(r => r.IsDeleted == false)
+                .ToList();
+        }
+
         public Raw GetRaw(string rawName)
         {
             return _context.Raws

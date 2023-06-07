@@ -15,6 +15,10 @@ namespace AccProductsEnt.Kuriev.Entities.DTO
         [DataType(DataType.Date)]
         public DateTime ReseiptDate { get; set; }
 
+        [Required]
+        [Display(Name = "Карточки")]
+        public int SelectedValueAccoundCard { get; set; }
+
 
     }
 }

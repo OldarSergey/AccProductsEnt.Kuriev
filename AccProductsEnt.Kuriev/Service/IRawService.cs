@@ -11,5 +11,7 @@ namespace AccProductsEnt.Kuriev.Service
         public void UpdateRaw(string rawName , Raw newRaw);
 
         public Raw GetRaw(string rawName);
+
+        public List<Raw> GetAllRaws();
     }
 }

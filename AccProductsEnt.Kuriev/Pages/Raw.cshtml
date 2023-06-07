@@ -2,8 +2,35 @@
 @model AccProductsEnt.Kuriev.Pages.RawModel
 @{
 }
+<form method="post">
+    <div class="form-group mb-3">
+        <label asp-for="InputRaw.RawName" class="col-sm-2 col-form-label"></label>
+        <input asp-for="InputRaw.RawName" class="form-control" id="inputTitle" />
+        <span asp-validation-for="InputRaw.RawName" style="color:darkred"></span>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="InputRaw.Quantity" class="col-sm-2 col-form-label"></label>
+        <input asp-for="InputRaw.Quantity" class="form-control" id="inputTitle" />
+        <span asp-validation-for="InputRaw.Quantity" style="color:darkred"></span>
+    </div>
+     <div class="form-group mb-3">
+        <label asp-for="InputRaw.PriceRaw" class="col-sm-2 col-form-label"></label>
+        <input asp-for="InputRaw.PriceRaw" class="form-control" id="inputTitle" />
+        <span asp-validation-for="InputRaw.PriceRaw" style="color:darkred"></span>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="InputRaw.ReceiptDate" class="col-sm-2 col-form-label"></label>
+        <input asp-for="InputRaw.ReceiptDate" class="form-control" id="inputTitle" />
+        <span asp-validation-for="InputRaw.ReceiptDate" style="color:darkred"></span>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="InputRaw.SelectProviderItem"></label>
+        <select class="mt-2" asp-for="InputRaw.SelectProviderItem" asp-items="Model.SelectProviderItems"></select>
+    </div>
 
-<div class="row">
+    <button type="submit" class="btn-secondary">Сохранить</button>
+</form>
+@*<div class="row">
     <div class="container-fluid justify-content-start p-5 col  height:100%" style="width:100%; height:100%;" >
 
         <h1 class="display-3 fs-1  " style="font-weight:500 "> Компания использует высококачественное сырье</h1>
@@ -59,4 +86,4 @@
 
         <img src="/images/topzkolonka.jpg" class="img-fluid mt-3" alt="topazz" style="margin-left:100px">
     </div>
-</div>
+</div>*@
