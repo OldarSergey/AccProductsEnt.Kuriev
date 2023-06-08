@@ -1,44 +1,49 @@
-using AccProductsEnt.Kuriev.Entities;
 using AccProductsEnt.Kuriev.Entities.DTO;
+using AccProductsEnt.Kuriev.Entities;
 using AccProductsEnt.Kuriev.Service;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.CodeAnalysis.Host;
 
 namespace AccProductsEnt.Kuriev.Pages
 {
-    public class StaffModel : PageModel
+    public class AddProductModel : PageModel
     {
+        private readonly IProductService _productService;
         private readonly IWorkshopService _workshopService;
         private readonly IStorageService _storageService;
         private readonly IAccountingService _accountingService;
         private readonly IImplementationsService _implementationsService;
-        private readonly IStaffService _staffService;
+
+
 
         [BindProperty]
-        public InputStaff InputModel { get; set; }
+        public IEnumerable<Product> Products { get; set; }
+
+
+        [BindProperty]
+        public InputProduct Input { get; set; }
 
         public List<SelectListItem> WorkshopItems { get; set; }
         public List<SelectListItem> StorageItems { get; set; }
         public List<SelectListItem> AccoutingItems { get; set; }
         public List<SelectListItem> ImplementationItems { get; set; }
-        public StaffModel(IWorkshopService workshopService, 
-            IStorageService storageService, 
-            IAccountingService accountingService, 
-            IImplementationsService implementationsService,
-            IStaffService staffService)
+
+        public AddProductModel(IProductService productService,
+            IWorkshopService workshopService,
+            IStorageService storageService,
+            IAccountingService accountingService,
+            IImplementationsService implementationsService)
         {
+            _productService = productService;
             _workshopService = workshopService;
             _storageService = storageService;
             _accountingService = accountingService;
             _implementationsService = implementationsService;
-            _staffService = staffService;
             LoadWorkshop();
             LoadStorage();
             LoadAccouting();
             LoadImplementation();
-
         }
         private void LoadWorkshop()
         {
@@ -87,25 +92,28 @@ namespace AccProductsEnt.Kuriev.Pages
 
         public void OnGet()
         {
+            Products = _productService.GetAllProducts();
         }
+
         public IActionResult OnPost()
         {
-            if(!ModelState.IsValid)
-                return Page();
-            var staff = new Staff()
+            var product = new Product
             {
-                FullName = InputModel.FullName,
-                Experience = InputModel.Experience,
-                Wage= InputModel.Wage,
-                Address = InputModel.Address,
-                Phone= InputModel.Phone,
-                WorkshopId = InputModel.SelectValueListWorkshop,
-                StorageId = InputModel.SelectValueListStorage,
-                AccountingId = InputModel.SelectValueListAccounting,
-                ImplementationId = InputModel.SelectValueListImplementation
+                Description = Input.Description,
+                ProductName = Input.ProductName,
+                Quantity = Input.Quantity,
+                DateOfManufacture = Input.DateOfManufacture,
+                PricePerPiece = Input.PricePerPiece,
+                ImgPath = Input.ImgPath,
+                WorkshopId = Input.SelectValueListWorkshop,
+                StorageId = Input.SelectValueListStorage,
+                AccountingId = Input.SelectValueListAccounting,
+                ImplementationId = Input.SelectValueListImplementation
             };
-            _staffService.AddStaff(staff);
-            return Page();
+
+
+            _productService.AddProduct(product);
+            return RedirectToPage("Product");
         }
     }
 }

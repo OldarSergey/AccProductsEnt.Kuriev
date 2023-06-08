@@ -13,19 +13,31 @@ builder.Services.AddRazorPages()
 
 builder.Services.AddScoped<IProductService, ProductService>();
 
-builder.Services.AddScoped <IRawService, RawService>();
+builder.Services.AddScoped<IRawService, RawService>();
 
 builder.Services.AddScoped<IStaffService, StaffService>();
 
 builder.Services.AddScoped<IAccountCardService, AccountCardService>();
 
 builder.Services.AddScoped<IAccountingService, AccountingService>();
+
 builder.Services.AddScoped<IStorageService, StorageService>();
+
 builder.Services.AddScoped<IProviderService, ProviderService>();
 
 builder.Services.AddScoped<ITechnicalProcessesService, TechnicalProcessesService>();
 
 builder.Services.AddScoped<IWorkshopService, WorkshopService>();
+
+builder.Services.AddScoped<IImplementationsService, ImplementationsService>();
+
+builder.Services.AddScoped<IPostServive, PostService>();
+
+builder.Services.AddScoped<IClientService, ClientSevice>();
+
+builder.Services.AddScoped<IPriceListService, PriceListService>();
+
+builder.Services.AddScoped<IOrderService, OrderService>();
 
 var configuration = builder.Configuration;
 

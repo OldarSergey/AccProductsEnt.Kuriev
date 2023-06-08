@@ -7,5 +7,6 @@ namespace AccProductsEnt.Kuriev.Service
         public void AddStorage (Storage storage);
 
         public List<Storage> GetStoragesAll ();
+
     }
 }

@@ -11,5 +11,7 @@ namespace AccProductsEnt.Kuriev.Service
         public void UpdateStaff(string staffName, Staff newStaff);
 
         public Staff GetStaff(string staffName);
+
+        public List<Staff> GetStaffAll();
     }
 }

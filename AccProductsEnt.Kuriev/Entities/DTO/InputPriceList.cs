@@ -14,5 +14,9 @@ namespace AccProductsEnt.Kuriev.Entities.DTO
         [Display(Name = "Цена за шт")]
         public decimal PricePerPiece { get; set; }
 
+        [Required]
+        [Display(Name = "Клиент")]
+        public int SelectValueListClient { get; set; }
+
     }
 }

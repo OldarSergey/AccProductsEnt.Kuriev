@@ -3,25 +3,25 @@ using AccProductsEnt.Kuriev.Entities;
 
 namespace AccProductsEnt.Kuriev.Service
 {
-    public class WorkshopService : IWorkshopService
+    public class OrderService : IOrderService
     {
         private readonly ApplicationDbContext _context;
 
-        public WorkshopService(ApplicationDbContext context)
+        public OrderService(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        public void AddWorkshop(Workshop workshop)
+        public void AddOrder(Order newOrder)
         {
-            _context.Workshops.Add(workshop);
+            _context.Orders.Add(newOrder);
             _context.SaveChanges();
         }
 
-        public List<Workshop> GetAllWorkshop()
+        public List<Order> GetOrdersAll()
         {
-            return _context.Workshops
-                .Where(w => w.IsDeleted == false)
+            return _context.Orders
+                .Where(o => o.IsDeleted == false)
                 .ToList();
         }
     }

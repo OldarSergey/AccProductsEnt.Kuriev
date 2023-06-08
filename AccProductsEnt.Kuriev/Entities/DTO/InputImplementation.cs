@@ -15,5 +15,9 @@ namespace AccProductsEnt.Kuriev.Entities.DTO
         [Display(Name = "Цена")]
         public decimal Price { get; set; }
 
+        [Required]
+        [Display(Name = "Склад")]
+        public int SelectValueListStorage { get; set; }
+
     }
 }

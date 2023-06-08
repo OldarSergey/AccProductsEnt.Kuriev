@@ -24,6 +24,13 @@ namespace AccProductsEnt.Kuriev.Service
               .FirstOrDefault();
         }
 
+        public List<Staff> GetStaffAll()
+        {
+            return _context.Staffs
+                .Where(s => s.IsDeleted == false)
+                .ToList();
+        }
+
         public void RemoveStaff(string staffName)
         {
             var staffs = _context.Staffs

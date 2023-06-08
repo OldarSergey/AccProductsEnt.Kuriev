@@ -2,13 +2,15 @@
 @model AccProductsEnt.Kuriev.Pages.ProductModel
 @{
 }
-<a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-success btn-sm ms-3">Добавить изделие</a>
+<div class="col">
+    <a class="btn mb-2 " style="background-color:cadetblue; color:white" asp-page="AddProduct">Add employee</a>
+</div>
 <div class="row mx-5  justify-content-center ">
     @foreach (var item in Model.Products)
     {
         <div class="col-3 ms-5  card shadow  mb-5" @*style="width: 36rem;"*@>
             <div class="col border-secondary" style="display:flex;">
-                img
+                <img src="@item.ImgPath">
             </div>
             <div class="col ">
                 <h1>@item.ProductName</h1>
@@ -23,7 +25,7 @@
 
 </div>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabes" aria-hidden="true">
+@*<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabes" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -62,6 +64,22 @@
                         <input asp-for="Input.ImgPath" class="form-control" id="inputTitle" />
                         <span asp-validation-for="Input.ImgPath" style="color:darkred"></span>
                     </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="Input.SelectValueListStorage"></label>
+                        <select class="mt-2" asp-for="Input.SelectValueListStorage" asp-items="Model.StorageItems"></select>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="Input.SelectValueListAccounting"></label>
+                        <select class="mt-2" asp-for="Input.SelectValueListAccounting" asp-items="Model.AccoutingItems"></select>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="Input.SelectValueListWorkshop"></label>
+                        <select class="mt-2" asp-for="Input.SelectValueListWorkshop" asp-items="Model.ImplementationItems"></select>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="Input.SelectValueListImplementation"></label>
+                        <select class="mt-2" asp-for="Input.SelectValueListImplementation" asp-items="Model.ImplementationItems"></select>
+                    </div>
                     <button type="submit" class="btn-secondary">Сохранить</button>
                 </form>
             </div>
@@ -73,3 +91,4 @@
     </div>
 </div>
 
+*@

@@ -30,7 +30,23 @@ namespace AccProductsEnt.Kuriev.Entities.DTO
         
         [Display(Name = "Путь картинки")]
         public string ImgPath { get; set; }
-        
+
+        [Required]
+        [Display(Name = "Цех")]
+        public int SelectValueListWorkshop { get; set; }
+
+        [Required]
+        [Display(Name = "Склад")]
+        public int SelectValueListStorage { get; set; }
+
+        [Required]
+        [Display(Name = "Бухгалтерия")]
+        public int SelectValueListAccounting { get; set; }
+
+        [Required]
+        [Display(Name = "Реализация")]
+        public int SelectValueListImplementation { get; set; }
+
 
     }
 }

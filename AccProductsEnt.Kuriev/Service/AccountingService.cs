@@ -17,5 +17,13 @@ namespace AccProductsEnt.Kuriev.Service
             _context.Accountings.Add(accounting);
             _context.SaveChanges();
         }
+
+        public List<Accounting> GetAllAccounts()
+        {
+          return _context.Accountings
+                .Where(ac => ac.IsDeleted == false)
+                .ToList();
+
+        }
     }
 }

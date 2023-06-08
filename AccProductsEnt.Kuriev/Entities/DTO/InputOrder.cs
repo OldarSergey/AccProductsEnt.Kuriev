@@ -21,8 +21,15 @@ namespace AccProductsEnt.Kuriev.Entities.DTO
         public DateTime OrdersDate { get; set; }
 
         [Required]
-        [StringLength(500, ErrorMessage = "Лимит превышен {1}")]
         [Display(Name = "Стоимость")]
-        public string Cost { get; set; }
+        public decimal Cost { get; set; }
+
+        [Required]
+        [Display(Name = "Реализация")]
+        public int SelectValueListImplementation { get; set; }
+
+        [Required]
+        [Display(Name = "Клиент")]
+        public int SelectValueListClient { get; set; }
     }
 }

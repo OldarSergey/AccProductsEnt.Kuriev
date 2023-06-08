@@ -14,5 +14,9 @@ namespace AccProductsEnt.Kuriev.Entities.DTO
         [StringLength(100)]
         [Display(Name = "Должностные обязанности")]
         public string JobResponsibilities { get; set; }
+
+        [Required]
+        [Display(Name = "Сотрудник")]
+        public int SelectValueListStaff { get; set; }
     }
 }
